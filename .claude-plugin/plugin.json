@@ -1,0 +1,11 @@
+{
+  "name": "aurelienmaze-skills",
+  "skills": [
+    "./grill-me",
+    "./to-prd",
+    "./to-sub-issues",
+    "./diagnose",
+    "./refactor-codebase",
+    "./implement"
+  ]
+}
