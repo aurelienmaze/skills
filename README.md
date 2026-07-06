@@ -71,6 +71,8 @@ Use [`implement`](./implement/SKILL.md) to execute the sub-issues in order.
 - [`to-prd`](./to-prd/SKILL.md) — Turn the current conversation context into a PRD that can be reused as a large issue or implementation brief.
 - [`to-sub-issues`](./to-sub-issues/SKILL.md) — Break a feature ticket into implementation-ready vertical slices.
 - [`implement`](./implement/SKILL.md) — Implement `docs/issues` sub-issues with TDD, sequential sub-agents, and frontend design verification.
+- [`frontend`](./frontend/SKILL.md) — Implement frontend/UI work using the bundled design taste and motion design references.
+- [`talk`](./talk/SKILL.md) — Discussion-only mode for questions, reasoning, and exploration without changing project state.
 - [`diagnose`](./diagnose/SKILL.md) — Disciplined diagnosis loop for hard bugs and performance regressions.
 - [`refactor-codebase`](./refactor-codebase/SKILL.md) — Find deepening opportunities that make a codebase more testable and agent-navigable.
 
@@ -81,6 +83,7 @@ Use [`implement`](./implement/SKILL.md) to execute the sub-issues in order.
 - Sub-issues should be vertical slices, not layer-by-layer tasks.
 - `implement` should not rely on the original PRD once sub-issues exist.
 - UI-heavy implementation slices may load the bundled frontend and motion design references.
+- `frontend` loads those same design and motion references directly for standalone UI work.
 
 ## Attribution
 

@@ -6,6 +6,8 @@
     "./to-sub-issues",
     "./diagnose",
     "./refactor-codebase",
-    "./implement"
+    "./implement",
+    "./frontend",
+    "./talk"
   ]
 }

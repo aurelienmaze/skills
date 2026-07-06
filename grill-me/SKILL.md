@@ -7,4 +7,6 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 
 Ask the questions one at a time.
 
+Stop when you believe the important and minor uncertainties have been resolved enough that further questions would not meaningfully reduce ambiguity. Do not continue asking questions only because more details could theoretically be discovered.
+
 If a question can be answered by exploring the codebase, explore the codebase instead.
