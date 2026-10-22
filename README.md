@@ -1,94 +1,54 @@
 # Aurelien Maze Skills
 
-Agent skills for turning a blurry idea into implementation-ready work, then shipping it slice by slice.
-
-The workflow is intentionally small:
+Agent skills for talking a problem through, building UI that feels right, and shipping a task to an open PR.
 
 ```text
-grill-me
-  -> to-prd
-  -> to-sub-issues
-  -> implement
-
-diagnose / refactor-codebase are used when the work breaks or the architecture starts fighting back.
+talk           -> think it through, no changes
+ship           -> implement, review with subagents, open the PR and a preview
+better-design  -> design, motion and interaction rules used by ship and any UI work
 ```
 
 ## Install
-
-Install every skill in this repo:
 
 ```bash
 npx skills@latest add aurelienmaze/skills
 ```
 
-## Workflow
-
-### 1. Explore the idea
-
-Use [`grill-me`](./grill-me/SKILL.md) to stress-test a plan before writing specs or code. It asks one question at a time and explores the codebase when the answer is discoverable there.
-
-### 2. Create a PRD / issue
-
-Use [`to-prd`](./to-prd/SKILL.md) to turn the conversation into a durable PRD or large issue.
-
-PRDs are written to:
-
-```text
-docs/prd/<specific-feature-slug>.md
-```
-
-This phase may happen from `main` and may produce several PRDs, so filenames should be specific.
-
-### 3. Split into sub-issues
-
-Use [`to-sub-issues`](./to-sub-issues/SKILL.md) to split a ticket, issue, PRD, or pasted brief into tracer-bullet vertical slices.
-
-Sub-issues are written directly to:
-
-```text
-docs/issues/
-```
-
-`docs/issues/` represents the current feature branch's implementation queue. It contains:
-
-```text
-docs/issues/_context_issue.md
-docs/issues/001-first-slice.md
-docs/issues/002-second-slice.md
-```
-
-`_context_issue.md` holds shared context so implementation agents do not need to read the original PRD, ticket, or conversation.
-
-### 4. Implement
-
-Use [`implement`](./implement/SKILL.md) to execute the sub-issues in order.
-
-`implement` uses fresh sequential sub-agents for sub-issues, gives each one only the needed context, applies TDD for testable behavior, and loads the frontend design references only for UI-heavy slices.
-
 ## Skills
 
-- [`grill-me`](./grill-me/SKILL.md) — Interview the user relentlessly about a plan or design until reaching shared understanding.
-- [`to-prd`](./to-prd/SKILL.md) — Turn the current conversation context into a PRD that can be reused as a large issue or implementation brief.
-- [`to-sub-issues`](./to-sub-issues/SKILL.md) — Break a feature ticket into implementation-ready vertical slices.
-- [`implement`](./implement/SKILL.md) — Implement `docs/issues` sub-issues with TDD, sequential sub-agents, and frontend design verification.
-- [`frontend`](./frontend/SKILL.md) — Implement frontend/UI work using the bundled design taste and motion design references.
-- [`talk`](./talk/SKILL.md) — Discussion-only mode for questions, reasoning, and exploration without changing project state.
-- [`diagnose`](./diagnose/SKILL.md) — Disciplined diagnosis loop for hard bugs and performance regressions.
-- [`refactor-codebase`](./refactor-codebase/SKILL.md) — Find deepening opportunities that make a codebase more testable and agent-navigable.
+- [`talk`](./talk/SKILL.md): Discussion-only mode. Ask questions, reason through options and explore an idea without modifying files or project state. Invoke with `/talk`.
+- [`ship`](./ship/SKILL.md): Take a task from request to open PR. Implements, runs the repo's checks, reviews the diff with independent subagents (implementation, then quality, security, design and performance when relevant), fixes blocking findings, opens the PR with `gh` and links a preview. Never merges. Invoke with `/ship`.
+- [`better-design`](./better-design/SKILL.md): Design, motion and interaction rules for web (React, Next.js, Tailwind) and React Native / Expo. Loads automatically for frontend work. Run `/better-design audit` for a full audit of existing UI.
+
+## Workflow
+
+1. `/talk` to explore the idea and settle the product decisions.
+2. `/ship` to implement it. `ship` uses `better-design` for any UI work and for its design review.
+3. Review the PR, test the preview by hand, merge.
 
 ## Conventions
 
-- `docs/prd/` is for PRDs and large feature issues.
-- `docs/issues/` is for the active feature branch's implementation queue.
-- Sub-issues should be vertical slices, not layer-by-layer tasks.
-- `implement` should not rely on the original PRD once sub-issues exist.
-- UI-heavy implementation slices may load the bundled frontend and motion design references.
-- `frontend` loads those same design and motion references directly for standalone UI work.
+- `ship` never merges. It stops at an open PR with a `Problem / Change / Verification / Still Open` body.
+- Screenshots of UI changes are attached to the PR (`gh` 2.99+ for `--attach`).
+- The preview link uses the Tailscale DNS name when `tailscale` is available, `localhost` otherwise.
+- `better-design` values are exact, and every change is expressed in the project's existing styling system.
+
+## Legacy
+
+The previous skill set lives in [`legacy/`](./legacy). It is kept for reference and is no longer maintained:
+
+- [`grill-me`](./legacy/grill-me/SKILL.md): Interview the user about a plan or design until reaching shared understanding.
+- [`to-prd`](./legacy/to-prd/SKILL.md): Turn the conversation into a PRD in `docs/prd/`.
+- [`to-sub-issues`](./legacy/to-sub-issues/SKILL.md): Split a PRD or ticket into vertical slices in `docs/issues/`.
+- [`implement`](./legacy/implement/SKILL.md): Implement `docs/issues` sub-issues with TDD and sequential sub-agents.
+- [`frontend`](./legacy/frontend/SKILL.md): Frontend work with bundled design and motion references. Replaced by `better-design`.
+- [`diagnose`](./legacy/diagnose/SKILL.md): Diagnosis loop for hard bugs and performance regressions.
+- [`refactor-codebase`](./legacy/refactor-codebase/SKILL.md): Find deepening opportunities that make a codebase more testable.
 
 ## Attribution
 
-These skills adapt material from:
+`better-design` condenses MIT-licensed work by Emil Kowalski, Jakub Krehel, Kyle Zantos and Vercel Labs. The legacy skills adapt MIT-licensed work by Matt Pocock and Leonxlnx. See [`NOTICE.md`](./NOTICE.md).
 
-- Matt Pocock's MIT-licensed [`mattpocock/skills`](https://github.com/mattpocock/skills)
-- Leonxlnx's MIT-licensed [`taste-skill`](https://github.com/Leonxlnx/taste-skill)
-- Emil Kowalski's public design engineering material at [animations.dev](https://animations.dev/)
+## License
+
+MIT. See [`LICENSE.md`](./LICENSE.md).

@@ -1,4 +1,27 @@
-This repository includes adapted material from:
+This repository includes adapted material from third-party MIT-licensed works.
+
+## better-design
+
+[`better-design`](./better-design) condenses and merges rules from:
+
+- Emil Kowalski, "Skills for Designers and Engineers"
+  - Source: https://github.com/emilkowalski/skills
+  - License: MIT
+- Jakub Krehel, "skills" and "make-interfaces-feel-better"
+  - Source: https://github.com/jakubkrehel/skills, https://github.com/jakubkrehel/make-interfaces-feel-better
+  - License: MIT
+- Kyle Zantos, "design-motion-principles" (for Jhey Tompkins' techniques)
+  - Source: https://github.com/kylezantos/design-motion-principles
+  - License: MIT
+- Vercel Labs, "Web Interface Guidelines"
+  - Source: https://github.com/vercel-labs/web-interface-guidelines
+  - License: MIT
+
+The full copyright notices and license text are in [`better-design/NOTICE.md`](./better-design/NOTICE.md).
+
+## legacy
+
+The skills in [`legacy/`](./legacy) adapt material from:
 
 - Matt Pocock's `mattpocock/skills` repository
   - Source: https://github.com/mattpocock/skills
