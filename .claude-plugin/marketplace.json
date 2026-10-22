@@ -1,5 +1,6 @@
 {
   "name": "aurelienmaze-skills",
+  "description": "Aurelien Maze agent skills: talk, ship, better-design, plus the legacy set.",
   "owner": {
     "name": "Aurélien Maze"
   },
