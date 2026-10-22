@@ -1,6 +1,6 @@
 ---
 name: to-prd
-description: Turn the current conversation context into a PRD that can be reused as a large issue or implementation brief. Use when user wants to create a PRD, turn a grilling session into a spec, or prepare a feature for issue breakdown.
+description: Legacy skill, no longer maintained. Turn the current conversation context into a PRD that can be reused as a large issue or implementation brief. Use when user wants to create a PRD, turn a grilling session into a spec, or prepare a feature for issue breakdown.
 ---
 
 This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.

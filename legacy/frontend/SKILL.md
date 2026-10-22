@@ -1,6 +1,6 @@
 ---
 name: frontend
-description: Implement frontend/UI work using the bundled design taste and motion design references. Use when user wants a frontend implementation, UI polish, redesign, motion work, or design-heavy interface changes.
+description: Legacy skill, no longer maintained. Implement frontend/UI work using the bundled design taste and motion design references. Use when user wants a frontend implementation, UI polish, redesign, motion work, or design-heavy interface changes.
 ---
 
 # Frontend

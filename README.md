@@ -14,6 +14,19 @@ better-design  -> design, motion and interaction rules used by ship and any UI w
 npx skills@latest add aurelienmaze/skills
 ```
 
+The picker lists two groups: `Aurelienmaze Skills` (the current set) and `Aurelienmaze Skills Legacy`. To install only the current set:
+
+```bash
+npx skills@latest add aurelienmaze/skills --skill talk ship better-design
+```
+
+As a Claude Code plugin:
+
+```text
+/plugin install aurelienmaze-skills --marketplace aurelienmaze/skills
+/plugin install aurelienmaze-skills-legacy --marketplace aurelienmaze/skills
+```
+
 ## Skills
 
 - [`talk`](./talk/SKILL.md): Discussion-only mode. Ask questions, reason through options and explore an idea without modifying files or project state. Invoke with `/talk`.
@@ -35,7 +48,7 @@ npx skills@latest add aurelienmaze/skills
 
 ## Legacy
 
-The previous skill set lives in [`legacy/`](./legacy). It is kept for reference and is no longer maintained:
+The previous skill set lives in [`legacy/`](./legacy). It is kept for reference and is no longer maintained. These skills are still installable, grouped under `Aurelienmaze Skills Legacy`, and each description starts with `Legacy skill, no longer maintained.`:
 
 - [`grill-me`](./legacy/grill-me/SKILL.md): Interview the user about a plan or design until reaching shared understanding.
 - [`to-prd`](./legacy/to-prd/SKILL.md): Turn the conversation into a PRD in `docs/prd/`.

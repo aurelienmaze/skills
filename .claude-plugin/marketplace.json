@@ -1,0 +1,34 @@
+{
+  "name": "aurelienmaze-skills",
+  "owner": {
+    "name": "Aurélien Maze"
+  },
+  "plugins": [
+    {
+      "name": "aurelienmaze-skills",
+      "description": "Talk, ship and better-design skills.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./talk",
+        "./ship",
+        "./better-design"
+      ]
+    },
+    {
+      "name": "aurelienmaze-skills-legacy",
+      "description": "Legacy skill set, kept for reference and no longer maintained.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./legacy/grill-me",
+        "./legacy/to-prd",
+        "./legacy/to-sub-issues",
+        "./legacy/implement",
+        "./legacy/frontend",
+        "./legacy/diagnose",
+        "./legacy/refactor-codebase"
+      ]
+    }
+  ]
+}

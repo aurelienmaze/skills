@@ -1,8 +1,0 @@
-{
-  "name": "aurelienmaze-skills",
-  "skills": [
-    "./talk",
-    "./ship",
-    "./better-design"
-  ]
-}

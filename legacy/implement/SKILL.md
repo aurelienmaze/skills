@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Implement sub-issues from docs/issues using sequential fresh sub-agents, with TDD for behavior and frontend design verification for UI-heavy slices. Use when user wants to implement a feature, run through sub-issues, or build from docs/issues.
+description: Legacy skill, no longer maintained. Implement sub-issues from docs/issues using sequential fresh sub-agents, with TDD for behavior and frontend design verification for UI-heavy slices. Use when user wants to implement a feature, run through sub-issues, or build from docs/issues.
 ---
 
 # Implement

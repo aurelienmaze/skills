@@ -1,6 +1,6 @@
 ---
 name: to-sub-issues
-description: Break a ticket, issue, PRD, or large implementation brief into independently-grabbable sub-issues using tracer-bullet vertical slices sized for 100k-token agent contexts. Use when user wants to split a feature ticket into sub-issues or implementation tickets.
+description: Legacy skill, no longer maintained. Break a ticket, issue, PRD, or large implementation brief into independently-grabbable sub-issues using tracer-bullet vertical slices sized for 100k-token agent contexts. Use when user wants to split a feature ticket into sub-issues or implementation tickets.
 ---
 
 # To Sub-Issues

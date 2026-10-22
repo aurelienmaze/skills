@@ -1,6 +1,6 @@
 ---
 name: better-design
-description: Design, motion and interaction rules for building and reviewing UI on the web (React, Next.js, Tailwind) and in React Native / Expo. Use for any frontend work, even when not asked explicitly: new screens, components, forms, animations, surfaces, typography, color, polish. Also use when the user invokes /better-design, or says a UI feels off, generic or not polished.
+description: "Design, motion and interaction rules for building and reviewing UI on the web (React, Next.js, Tailwind) and in React Native / Expo. Use for any frontend work, even when not asked explicitly: new screens, components, forms, animations, surfaces, typography, color, polish. Also use when the user invokes /better-design, or says a UI feels off, generic or not polished."
 ---
 
 # Better Design
