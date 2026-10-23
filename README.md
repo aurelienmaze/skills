@@ -1,12 +1,6 @@
 # Aurelien Maze Skills
 
-Agent skills for talking a problem through, building UI that feels right, and shipping a task to an open PR.
-
-```text
-talk           -> think it through, no changes
-ship           -> implement, review with subagents, open the PR and a preview
-better-design  -> design, motion and interaction rules used by ship and any UI work
-```
+This is the set of agent skills I built for my own work, to get the most out of coding agents while keeping control over what they produce. I use them every day to think problems through, ship carefully and hold UI to a high standard. I'm sharing them as-is, so anyone can install or adapt them.
 
 ## Install
 
@@ -29,22 +23,15 @@ As a Claude Code plugin:
 
 ## Skills
 
-- [`talk`](./talk/SKILL.md): Discussion-only mode. Ask questions, reason through options and explore an idea without modifying files or project state. Invoke with `/talk`.
-- [`ship`](./ship/SKILL.md): Take a task from request to open PR. Implements, runs the repo's checks, reviews the diff with independent subagents (implementation, then quality, security, design and performance when relevant), fixes blocking findings, opens the PR with `gh` and links a preview. Never merges. Invoke with `/ship`.
-- [`better-design`](./better-design/SKILL.md): Design, motion and interaction rules for web (React, Next.js, Tailwind) and React Native / Expo. Loads automatically for frontend work. Run `/better-design audit` for a full audit of existing UI.
+- [`talk`](./talk/SKILL.md): Discussion-only mode. Ask questions, compare options or explore an idea while the agent leaves files and project state untouched. Invoke with `/talk`.
+- [`ship`](./ship/SKILL.md): Take a task from request to open PR. The agent implements the change, checks it, has it reviewed by independent subagents, then opens the PR with a preview to test. Invoke with `/ship`.
+- [`better-design`](./better-design/SKILL.md): Design, motion and interaction rules for the web and React Native. Loads automatically for frontend work, and `/better-design audit` reviews an existing UI.
 
 ## Workflow
 
 1. `/talk` to explore the idea and settle the product decisions.
 2. `/ship` to implement it. `ship` uses `better-design` for any UI work and for its design review.
 3. Review the PR, test the preview by hand, merge.
-
-## Conventions
-
-- `ship` never merges. It stops at an open PR with a `Problem / Change / Verification / Still Open` body.
-- Screenshots of UI changes are attached to the PR (`gh` 2.99+ for `--attach`).
-- The preview link uses the Tailscale DNS name when `tailscale` is available, `localhost` otherwise.
-- `better-design` values are exact, and every change is expressed in the project's existing styling system.
 
 ## Legacy
 
