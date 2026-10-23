@@ -4,6 +4,8 @@ This is the set of agent skills I built for my own work, to get the most out of 
 
 ## Install
 
+### 1. Skills
+
 ```bash
 npx skills@latest add aurelienmaze/skills
 ```
@@ -19,6 +21,18 @@ As a Claude Code plugin:
 ```text
 /plugin install aurelienmaze-skills --marketplace aurelienmaze/skills
 /plugin install aurelienmaze-skills-legacy --marketplace aurelienmaze/skills
+```
+
+### 2. Global rules
+
+[`CLAUDE.md`](./CLAUDE.md) holds the global rules the skills rely on: language, git conventions, code style, error handling and no silent fallbacks. `ship` reviews every diff against them, so install them too. Append them to your global instructions:
+
+```bash
+# Claude Code
+{ echo; curl -fsSL https://raw.githubusercontent.com/aurelienmaze/skills/main/CLAUDE.md; } >> ~/.claude/CLAUDE.md
+
+# Codex
+{ echo; curl -fsSL https://raw.githubusercontent.com/aurelienmaze/skills/main/CLAUDE.md; } >> ~/.codex/AGENTS.md
 ```
 
 ## Skills
